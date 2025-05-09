@@ -2,9 +2,9 @@ import data
 from locators import MainPageLocators, RegistrationPageLocators, RegistrationErrorLocators
 
 
-class TestBoard:
+class TestRegistrationPage:
 
-    def test_check_registration_happy_path(self, ui):
+    def test_check_registration_page_happy_path(self, ui):
         ui.click(MainPageLocators.enter_and_registration_button)
         ui.click(RegistrationPageLocators.not_account_button)
         ui.input_fake_email(RegistrationPageLocators.email)
@@ -17,7 +17,7 @@ class TestBoard:
 
         assert actual_user_name == data.user_name and user_avatar is not None and user_avatar.is_displayed()
 
-    def test_check_registration_w_not_repeat_password(self, ui):
+    def test_check_registration_page_w_not_repeat_password(self, ui):
         ui.click(MainPageLocators.enter_and_registration_button)
         ui.click(RegistrationPageLocators.not_account_button)
         ui.input_fake_email(RegistrationPageLocators.email)
@@ -36,7 +36,7 @@ class TestBoard:
             '255, 105, 114' in border_color_repeat_password
         ), f"Ошибка: {error_text}, цвет рамки: {border_color_email, border_color_password, border_color_repeat_password}"
 
-    def test_check_registration_existing_user(self, ui):
+    def test_check_registration_page_existing_user(self, ui):
         ui.click(MainPageLocators.enter_and_registration_button)
         ui.click(RegistrationPageLocators.not_account_button)
         ui.input_text(RegistrationPageLocators.email, "borodin_21@gmail.com")
