@@ -21,11 +21,13 @@ class UIHelpers:
         email = self.fake.email()
         element.send_keys(email)
 
-    def input_password(self, locator):
-        self.get_element(locator).send_keys(data.password)
+    def input_text(self, locator, text):
+        self.get_element(locator).send_keys(text)
 
-    def get_error(self, locator):
+    def get_text(self, locator):
         return self.get_element(locator).text
 
     def get_color(self, locator):
         return self.get_element(locator).value_of_css_property('border')
+
+
