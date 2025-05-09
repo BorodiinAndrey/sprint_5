@@ -1,7 +1,7 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from faker import Faker
-import data
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class UIHelpers:
@@ -30,4 +30,6 @@ class UIHelpers:
     def get_color(self, locator):
         return self.get_element(locator).value_of_css_property('border')
 
-
+    def scroll_to_element(self, locator):
+        element = self.get_element(locator)
+        ActionChains(self.driver).move_to_element(element).perform()

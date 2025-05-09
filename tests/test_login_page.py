@@ -6,8 +6,8 @@ class TestLoginPage:
 
     def test_check_login_page_happy_path(self, ui):
         ui.click(MainPageLocators.enter_and_registration_button)
-        ui.input_text(RegistrationPageLocators.email, "borodin_21@gmail.com")
-        ui.input_text(RegistrationPageLocators.password, "12345")
+        ui.input_text(RegistrationPageLocators.email, data.email)
+        ui.input_text(RegistrationPageLocators.password, data.password)
         ui.click(MainPageLocators.enter)
 
         actual_user_name = ui.get_text(MainPageLocators.user_name)
@@ -17,8 +17,8 @@ class TestLoginPage:
 
     def test_check_logout_happy_path(self, ui):
         ui.click(MainPageLocators.enter_and_registration_button)
-        ui.input_text(RegistrationPageLocators.email, "borodin_21@gmail.com")
-        ui.input_text(RegistrationPageLocators.password, "12345")
+        ui.input_text(RegistrationPageLocators.email, data.email)
+        ui.input_text(RegistrationPageLocators.password, data.password)
         ui.click(MainPageLocators.enter)
         ui.click(MainPageLocators.exit)
 

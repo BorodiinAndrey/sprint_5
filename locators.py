@@ -25,10 +25,12 @@ class RegistrationErrorLocators:
 class CreateAnnouncement:
     announcement_modal_text = (By.XPATH, "//h1[text()='Чтобы разместить объявление, авторизуйтесь']")
     name = (By.NAME, "name")
-    description = (By.NAME, "description")
+    description = (By.XPATH, "//textarea[@placeholder='Описание товара']")
     price = (By.NAME, "price")
     choose_category_button = (By.XPATH, "(//button[@class='dropDownMenu_arrowDown__pfGL1 dropDownMenu_noDefault__wSKsP'])[1]")
     choose_books_category = (By.XPATH, "//span[text()='Книги']")
     choose_city_button = (By.XPATH, "(//button[@class='dropDownMenu_arrowDown__pfGL1 dropDownMenu_noDefault__wSKsP'])[2]")
     choose_spb_city = (By.XPATH, "//span[text()='Санкт-Петербург']")
     publish_button = (By.XPATH, "//button[text()='Опубликовать']")
+    footer = (By.XPATH, "//a[text()='Документация']")
+    card_name = (By.XPATH, "//div[@class='about']//h2[text()='Война и мир']")

@@ -8,8 +8,8 @@ class TestRegistrationPage:
         ui.click(MainPageLocators.enter_and_registration_button)
         ui.click(RegistrationPageLocators.not_account_button)
         ui.input_fake_email(RegistrationPageLocators.email)
-        ui.input_text(RegistrationPageLocators.password, "12345")
-        ui.input_text(RegistrationPageLocators.repeat_password, "12345")
+        ui.input_text(RegistrationPageLocators.password, data.password)
+        ui.input_text(RegistrationPageLocators.repeat_password, data.password)
         ui.click(RegistrationPageLocators.create_account)
 
         actual_user_name = ui.get_text(MainPageLocators.user_name)
@@ -21,7 +21,7 @@ class TestRegistrationPage:
         ui.click(MainPageLocators.enter_and_registration_button)
         ui.click(RegistrationPageLocators.not_account_button)
         ui.input_fake_email(RegistrationPageLocators.email)
-        ui.input_text(RegistrationPageLocators.password, "12345")
+        ui.input_text(RegistrationPageLocators.password, data.password)
         ui.click(RegistrationPageLocators.create_account)
 
         error_text = ui.get_text(RegistrationErrorLocators.error_text_1)
@@ -39,9 +39,9 @@ class TestRegistrationPage:
     def test_check_registration_page_existing_user(self, ui):
         ui.click(MainPageLocators.enter_and_registration_button)
         ui.click(RegistrationPageLocators.not_account_button)
-        ui.input_text(RegistrationPageLocators.email, "borodin_21@gmail.com")
-        ui.input_text(RegistrationPageLocators.password, "12345")
-        ui.input_text(RegistrationPageLocators.repeat_password, "12345")
+        ui.input_text(RegistrationPageLocators.email, data.email)
+        ui.input_text(RegistrationPageLocators.password, data.password)
+        ui.input_text(RegistrationPageLocators.repeat_password, data.password)
         ui.click(RegistrationPageLocators.create_account)
 
         error_text = ui.get_text(RegistrationErrorLocators.error_text_2)

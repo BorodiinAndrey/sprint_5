@@ -1,11 +1,14 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from ui_helpers import UIHelpers
 
 
 @pytest.fixture()
 def driver():
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument("start-maximized")
+    driver = webdriver.Chrome(options=options)
     driver.get('https://qa-desk.stand.praktikum-services.ru/')
     yield driver
     driver.quit()
